@@ -193,7 +193,7 @@ footer{font-size:11px}
 const mods=[
   {name:"Donut Fake Pay",description:"A fake /pay interface made for DonutSMP-style gameplay.",category:"DonutSMP",icon:"💸",tags:["Fabric","DonutSMP"],price:"FREE",sale:"FREE FOR 1 MONTH!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550940623974961302/payy-1.0.0.jar?ex=6ab02983&is=6aaed803&hm=7de30315b192c1f5c09a5d16b36841b8baca1f3de290806443b9b11db4b8b7ef&"},
   {name:"Donut Fake Scoreboard",description:"An editable fake scoreboard designed for DonutSMP-style gameplay.",category:"DonutSMP",icon:"📊",tags:["Fabric","DonutSMP"],price:"FREE",sale:"FREE FOR 1 MONTH!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550941036572835932/EditableScoreboard-1.0.0.jar?ex=6ab029e6&is=6aaed866&hm=bc984babfdeb9b01908f57cca01954ca596f1bb3647024603f11b59b33ceae2c&"},
-  {name:"Leather to Netherite Armor",description:"A resource pack that changes the appearance of leather armor to a netherite-style look.",category:"Resource Packs",icon:"🛡️",tags:["Resource Pack","Minecraft"],price:"Free",download:""}
+  {name:"Leather to Netherite Armor",description:"A resource pack that changes the appearance of leather armor to a netherite-style look.",category:"Resource Packs",icon:"🛡️",tags:["Resource Pack","Minecraft"],price:"FREE",sale:"FREE FOR 1 MONTH!",download:""}
 ];
 const categories=[
   {name:"Featured",icon:"⭐",desc:"Highlighted projects"},
@@ -226,11 +226,13 @@ function renderMods(){
     return;
   }
   grid.innerHTML=shown.map(function(m){
-    const direct=m.download?'<a class="btn primary" href="'+esc(m.download)+'" target="_blank" rel="noopener noreferrer">Download FREE ↓</a>':'<button class="btn" type="button" disabled>Coming Soon</button>';
+    const direct=m.download
+      ? '<a class="btn primary" href="'+esc(m.download)+'" target="_blank" rel="noopener noreferrer">Download FREE ↓</a>'
+      : '<button class="btn" type="button" disabled>Coming Soon</button>';
     const sale=m.sale?'<div class="sale">'+esc(m.sale)+'</div>':"";
-    return '<article class="mod-card"><div class="mod-top"><div class="mod-icon">'+esc(m.icon)+'</div><div><div class="price">'+esc(m.price||"Free")+'</div>'+sale+'</div></div><h3>'+esc(m.name)+'</h3><p>'+esc(m.description)+'</p><div class="tags"><span class="tag">'+esc(m.category)+'</span>'+(m.tags||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join("")+'</div><div class="card-actions"><button class="btn primary purchase-btn" data-index="'+mods.indexOf(m)+'">Download FREE</button>'+direct+'</div></article>';
+    return '<article class="mod-card"><div class="mod-top"><div class="mod-icon">'+esc(m.icon)+'</div><div><div class="price">'+esc(m.price||"FREE")+'</div>'+sale+'</div></div><h3>'+esc(m.name)+'</h3><p>'+esc(m.description)+'</p><div class="tags"><span class="tag">'+esc(m.category)+'</span>'+(m.tags||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join("")+'</div><div class="card-actions">'+direct+'</div></article>';
   }).join("");
-  }
+}
 function renderCategories(){
   document.getElementById("categoryGrid").innerHTML=categories.map(function(c){return '<div class="category" data-category="'+esc(c.name)+'"><strong>'+esc(c.icon)+" "+esc(c.name)+'</strong><p>'+esc(c.desc)+'</p></div>'}).join("");
   document.querySelectorAll(".category").forEach(function(el){el.onclick=function(){selected=el.dataset.category;renderFilters();renderMods();document.getElementById("mods").scrollIntoView({behavior:"smooth"})}});
