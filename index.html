@@ -54,6 +54,7 @@ const mods=[
     description:"A fake /pay interface for DonutSMP-style gameplay.",
     category:"DonutSMP",
     tags:["Fabric","DonutSMP"],
+    price:"$20,000,000",
     download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550940623974961302/payy-1.0.0.jar?ex=6ab02983&is=6aaed803&hm=7de30315b192c1f5c09a5d16b36841b8baca1f3de290806443b9b11db4b8b7ef&"
   },
   {
@@ -61,6 +62,7 @@ const mods=[
     description:"An editable fake scoreboard for DonutSMP-style gameplay.",
     category:"DonutSMP",
     tags:["Fabric","DonutSMP"],
+    price:"$20,000,000",
     download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550941036572835932/EditableScoreboard-1.0.0.jar?ex=6ab029e6&is=6aaed866&hm=bc984babfdeb9b01908f57cca01954ca596f1bb3647024603f11b59b33ceae2c&"
   }
 ];
@@ -75,7 +77,7 @@ const categories=[
 const grid=document.getElementById("modGrid"),filters=document.getElementById("filters"),search=document.getElementById("search");let selected="All";
 function esc(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]))}
 function renderFilters(){filters.innerHTML="";["All",...categories.map(c=>c.name)].forEach(name=>{const b=document.createElement("button");b.className="filter"+(name===selected?" active":"");b.textContent=name;b.onclick=()=>{selected=name;renderFilters();renderMods()};filters.appendChild(b)})}
-function renderMods(){const q=search.value.toLowerCase().trim();const shown=mods.filter(m=>(selected==="All"||m.category===selected)&&(!q||`${m.name} ${m.description} ${m.category} ${(m.tags||[]).join(" ")}`.toLowerCase().includes(q)));grid.innerHTML=shown.length?shown.map(m=>`<article class="card"><h3>${esc(m.name)}</h3><p>${esc(m.description)}</p><div class="tags"><span class="tag">${esc(m.category)}</span>${(m.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div><a class="btn primary" style="display:inline-block;margin-top:18px" href="${esc(m.download)}" target="_blank" rel="noopener">Download ↓</a></article>`).join(""): `<div class="empty"><div><div class="empty-icon">🧩</div><strong>${mods.length?"No mods found":"No mods added yet"}</strong><p style="margin-top:7px">Edit the <code>mods</code> array in this file to add your first mod.</p></div></div>`}
+function renderMods(){const q=search.value.toLowerCase().trim();const shown=mods.filter(m=>(selected==="All"||m.category===selected)&&(!q||`${m.name} ${m.description} ${m.category} ${(m.tags||[]).join(" ")}`.toLowerCase().includes(q)));grid.innerHTML=shown.length?shown.map(m=>`<article class="card"><div class="card-content"><span class="price">${esc(m.price || "Free")}</span><h3>${esc(m.name)}</h3><p>${esc(m.description)}</p><div class="tags"><span class="tag">${esc(m.category)}</span>${(m.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div><a class="btn primary" style="display:inline-block;margin-top:18px" href="${esc(m.download)}" target="_blank" rel="noopener">Download ↓</a></div></article>`).join(""): `<div class="empty"><div><div class="empty-icon">🧩</div><strong>${mods.length?"No mods found":"No mods added yet"}</strong><p style="margin-top:7px">Edit the <code>mods</code> array in this file to add your first mod.</p></div></div>`}
 function renderCategories(){document.getElementById("categoryGrid").innerHTML=categories.map(c=>`<div class="category" data-cat="${esc(c.name)}"><strong>${c.icon} ${esc(c.name)}</strong><span>${esc(c.desc)}</span></div>`).join("");document.querySelectorAll(".category").forEach(el=>el.onclick=()=>{selected=el.dataset.cat;renderFilters();renderMods();document.getElementById("mods").scrollIntoView({behavior:"smooth"})})}
 search.addEventListener("input",renderMods);
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
