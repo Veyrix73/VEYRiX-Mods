@@ -25,7 +25,7 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between}
 .hero h1{margin:25px 0 0;font-size:clamp(44px,9vw,104px);line-height:.92;letter-spacing:.02em;font-weight:900;background:linear-gradient(100deg,#fff 10%,#c59aff 46%,#83abff 90%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:6px 7px 0 rgba(0,0,0,.32);animation:up .8s .06s ease both}
 .hero-sub{max-width:650px;margin:28px auto 0;color:var(--muted);line-height:1.75;font-size:15px;animation:up .8s .13s ease both}.hero-actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:32px;animation:up .8s .2s ease both}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 17px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;text-decoration:none;font-size:10px;cursor:pointer;transition:.25s;box-shadow:0 8px 25px rgba(0,0,0,.12)}.btn:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(0,0,0,.28);border-color:rgba(255,255,255,.18)}.btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--purple),var(--purple2));box-shadow:0 14px 40px rgba(120,100,255,.22)}.btn.discord{background:linear-gradient(135deg,rgba(88,101,242,.28),rgba(88,101,242,.08));border-color:rgba(88,101,242,.35)}.discord-dot{width:8px;height:8px;border-radius:50%;background:var(--discord);box-shadow:0 0 13px rgba(88,101,242,.85)}
-.hero-stats{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:45px;animation:up .8s .27s ease both}.stat{min-width:155px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.022);box-shadow:inset 0 1px rgba(255,255,255,.035)}.stat b{display:block;font-size:14px}.stat span{display:block;margin-top:6px;color:var(--dim);font:11px Inter,system-ui,sans-serif}
+.free-month-banner{display:inline-block;margin-top:24px;padding:12px 17px;border:1px solid rgba(124,243,170,.25);border-radius:13px;background:rgba(124,243,170,.07);color:#9af2bb;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.12)}.hero-stats{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:45px;animation:up .8s .27s ease both}.stat{min-width:155px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.022);box-shadow:inset 0 1px rgba(255,255,255,.035)}.stat b{display:block;font-size:14px}.stat span{display:block;margin-top:6px;color:var(--dim);font:11px Inter,system-ui,sans-serif}
 section{padding:98px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:27px}.eyebrow{color:#b08dff;font-size:9px;letter-spacing:.16em;text-transform:uppercase}.section-title{margin:7px 0 0;font-size:31px;letter-spacing:.03em}.section-desc{max-width:560px;color:var(--muted);font-size:13px;line-height:1.7}
 .controls{margin-bottom:14px}.search{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:14px;outline:0;background:rgba(255,255,255,.035);color:#fff;font:13px Inter,system-ui,sans-serif}.search:focus{border-color:rgba(169,120,255,.5);box-shadow:0 0 0 4px rgba(169,120,255,.07)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}.filter{padding:10px 13px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.025);color:#9898a8;cursor:pointer;font-size:9px;transition:.2s}.filter:hover,.filter.active{color:#fff;background:rgba(169,120,255,.12);border-color:rgba(169,120,255,.38)}
@@ -132,12 +132,12 @@ footer{font-size:11px}
   <div class="container hero-inner">
     <div class="kicker"><span class="live"></span> VEYRiX'S MODS • ONLINE</div>
     <h1>MINECRAFT<br>MODS REBUILT.</h1>
-    <p class="hero-sub">A premium hub for Minecraft mods and resource packs, with a futuristic interface, instant category filtering, and a clear purchase flow for paid releases.</p>
+    <p class="hero-sub">A free hub for Minecraft mods and resource packs — everything listed here is FREE for the first month.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#mods">Explore Mods ↓</a>
       <a class="btn discord" href="https://discord.gg/D5GBn6Ez53" target="_blank" rel="noopener noreferrer"><span class="discord-dot"></span>Join Discord</a>
     </div>
-    <div class="hero-stats">
+    <div class="free-month-banner">🎉 EVERYTHING IS FREE FOR 1 MONTH • NO PAYMENT REQUIRED</div><div class="hero-stats">
       <div class="stat"><b id="modCount">0</b><span>Releases listed</span></div>
       <div class="stat"><b>🍩 DONUTSMP</b><span>Featured ecosystem</span></div>
       <div class="stat"><b>24/7</b><span>Online hosting</span></div>
@@ -149,7 +149,7 @@ footer{font-size:11px}
   <div class="container">
     <div class="section-head">
       <div><div class="eyebrow">Library</div><h2 class="section-title">Browse Mods</h2></div>
-      <p class="section-desc">Paid releases use the <b>Purchase / Verify</b> flow. It opens the instructions page with the listed price and the Discord contact.</p>
+      <p class="section-desc">Every listed release is FREE for the first month. Use the download button on each release.</p>
     </div>
     <div class="controls"><input class="search" id="search" placeholder="Search mods, tags, categories..." aria-label="Search mods"></div>
     <div class="filters" id="filters"></div>
@@ -175,7 +175,7 @@ footer{font-size:11px}
       <div class="feature-list">
         <div class="feature"><span class="check">✓</span><p>Responsive design with a mobile navigation menu and touch-friendly controls.</p></div>
         <div class="feature"><span class="check">✓</span><p>Animated background, glow effects, smooth scrolling, and polished cards.</p></div>
-        <div class="feature"><span class="check">✓</span><p>Purchase instructions are handled inside the site without pretending to verify payments automatically.</p></div>
+        <div class="feature"><span class="check">✓</span><p>All listed releases are currently FREE for the first month.</p></div>
       </div>
     </div>
     <div class="about-card">
@@ -188,35 +188,11 @@ footer{font-size:11px}
 
 <footer class="container"><span>© 2026 VEYRiX's Mods</span><span>Made for Minecraft creators.</span></footer>
 
-<div class="purchase-overlay" id="purchaseOverlay" aria-hidden="true">
-  <div class="purchase-panel">
-    <button class="close" id="closePurchase" aria-label="Close">×</button>
-    <div class="purchase-kicker">Purchase / Verify</div>
-    <h2 class="purchase-title" id="purchaseTitle">Mod</h2>
-    <p class="purchase-desc" id="purchaseDesc"></p>
-    <div class="purchase-box">
-      <div class="purchase-row"><span>Price</span><b id="purchasePrice"></b></div>
-      <div class="purchase-row"><span>Discord contact</span><b>veritymodslol</b></div>
-      <div class="purchase-row"><span>Category</span><b id="purchaseCategory"></b></div>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="step-num">1</span><div><strong>DM veritymodslol</strong><p>Message <b>veritymodslol</b> on Discord to request the selected release.</p></div></div>
-      <div class="step"><span class="step-num">2</span><div><strong>Pay the listed price</strong><p>Tell the seller which release you want and pay the exact amount shown above.</p></div></div>
-      <div class="step"><span class="step-num">3</span><div><strong>Receive the file</strong><p>After the seller confirms the payment, they can provide the mod or resource pack.</p></div></div>
-    </div>
-    <div class="purchase-actions">
-      <a class="btn discord" href="https://discord.com/" target="_blank" rel="noopener noreferrer"><span class="discord-dot"></span>Open Discord</a>
-      <button class="btn" id="copySeller">Copy veritymodslol</button>
-      <button class="btn" id="backPurchase">Back to Mods</button>
-    </div>
-    <p class="note">This page does not process payments or automatically verify payments. It only displays the seller contact and purchase instructions.</p>
-  </div>
-</div>
 
 <script>
 const mods=[
-  {name:"Donut Fake Pay",description:"A fake /pay interface made for DonutSMP-style gameplay.",category:"DonutSMP",icon:"💸",tags:["Fabric","DonutSMP"],price:"$10,000,000",sale:"50% OFF!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550940623974961302/payy-1.0.0.jar?ex=6ab02983&is=6aaed803&hm=7de30315b192c1f5c09a5d16b36841b8baca1f3de290806443b9b11db4b8b7ef&"},
-  {name:"Donut Fake Scoreboard",description:"An editable fake scoreboard designed for DonutSMP-style gameplay.",category:"DonutSMP",icon:"📊",tags:["Fabric","DonutSMP"],price:"$10,000,000",sale:"50% OFF!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550941036572835932/EditableScoreboard-1.0.0.jar?ex=6ab029e6&is=6aaed866&hm=bc984babfdeb9b01908f57cca01954ca596f1bb3647024603f11b59b33ceae2c&"},
+  {name:"Donut Fake Pay",description:"A fake /pay interface made for DonutSMP-style gameplay.",category:"DonutSMP",icon:"💸",tags:["Fabric","DonutSMP"],price:"FREE",sale:"FREE FOR 1 MONTH!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550940623974961302/payy-1.0.0.jar?ex=6ab02983&is=6aaed803&hm=7de30315b192c1f5c09a5d16b36841b8baca1f3de290806443b9b11db4b8b7ef&"},
+  {name:"Donut Fake Scoreboard",description:"An editable fake scoreboard designed for DonutSMP-style gameplay.",category:"DonutSMP",icon:"📊",tags:["Fabric","DonutSMP"],price:"FREE",sale:"FREE FOR 1 MONTH!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550941036572835932/EditableScoreboard-1.0.0.jar?ex=6ab029e6&is=6aaed866&hm=bc984babfdeb9b01908f57cca01954ca596f1bb3647024603f11b59b33ceae2c&"},
   {name:"Leather to Netherite Armor",description:"A resource pack that changes the appearance of leather armor to a netherite-style look.",category:"Resource Packs",icon:"🛡️",tags:["Resource Pack","Minecraft"],price:"Free",download:""}
 ];
 const categories=[
@@ -250,32 +226,15 @@ function renderMods(){
     return;
   }
   grid.innerHTML=shown.map(function(m){
-    const direct=m.download?'<a class="btn" href="'+esc(m.download)+'" target="_blank" rel="noopener noreferrer">Direct file</a>':"";
+    const direct=m.download?'<a class="btn primary" href="'+esc(m.download)+'" target="_blank" rel="noopener noreferrer">Download FREE ↓</a>':'<button class="btn" type="button" disabled>Coming Soon</button>';
     const sale=m.sale?'<div class="sale">'+esc(m.sale)+'</div>':"";
-    return '<article class="mod-card"><div class="mod-top"><div class="mod-icon">'+esc(m.icon)+'</div><div><div class="price">'+esc(m.price||"Free")+'</div>'+sale+'</div></div><h3>'+esc(m.name)+'</h3><p>'+esc(m.description)+'</p><div class="tags"><span class="tag">'+esc(m.category)+'</span>'+(m.tags||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join("")+'</div><div class="card-actions"><button class="btn primary purchase-btn" data-index="'+mods.indexOf(m)+'">Purchase / Verify</button>'+direct+'</div></article>';
+    return '<article class="mod-card"><div class="mod-top"><div class="mod-icon">'+esc(m.icon)+'</div><div><div class="price">'+esc(m.price||"Free")+'</div>'+sale+'</div></div><h3>'+esc(m.name)+'</h3><p>'+esc(m.description)+'</p><div class="tags"><span class="tag">'+esc(m.category)+'</span>'+(m.tags||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join("")+'</div><div class="card-actions"><button class="btn primary purchase-btn" data-index="'+mods.indexOf(m)+'">Download FREE</button>'+direct+'</div></article>';
   }).join("");
-  document.querySelectorAll(".purchase-btn").forEach(function(btn){btn.onclick=function(){openPurchase(mods[Number(btn.dataset.index)])}});
-}
+  }
 function renderCategories(){
   document.getElementById("categoryGrid").innerHTML=categories.map(function(c){return '<div class="category" data-category="'+esc(c.name)+'"><strong>'+esc(c.icon)+" "+esc(c.name)+'</strong><p>'+esc(c.desc)+'</p></div>'}).join("");
   document.querySelectorAll(".category").forEach(function(el){el.onclick=function(){selected=el.dataset.category;renderFilters();renderMods();document.getElementById("mods").scrollIntoView({behavior:"smooth"})}});
 }
-function openPurchase(mod){
-  document.getElementById("purchaseTitle").textContent=mod.name;
-  document.getElementById("purchaseDesc").textContent=mod.description;
-  document.getElementById("purchasePrice").textContent=mod.price||"Free";
-  document.getElementById("purchaseCategory").textContent=mod.category;
-  overlay.classList.add("open");overlay.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
-}
-function closePurchase(){overlay.classList.remove("open");overlay.setAttribute("aria-hidden","true");document.body.style.overflow=""}
-document.getElementById("closePurchase").onclick=closePurchase;
-document.getElementById("backPurchase").onclick=closePurchase;
-overlay.addEventListener("click",function(e){if(e.target===overlay)closePurchase()});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closePurchase()});
-document.getElementById("copySeller").onclick=async function(){
-  try{await navigator.clipboard.writeText("veritymodslol");const b=document.getElementById("copySeller");const old=b.textContent;b.textContent="Copied!";setTimeout(function(){b.textContent=old},1300)}
-  catch(e){alert("Discord username: veritymodslol")}
-};
 search.addEventListener("input",renderMods);
 document.getElementById("modCount").textContent=mods.length;
 const menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");
