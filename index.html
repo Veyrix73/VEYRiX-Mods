@@ -43,6 +43,28 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line);display:flex;justify
 @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
 @media(max-width:950px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about{grid-template-columns:1fr}}
 @media(max-width:720px){.container{width:min(100% - 22px,1180px)}nav{height:64px}.nav-links{display:none}.menu-btn{display:block}.mobile-menu{position:absolute;left:11px;right:11px;top:72px;display:none;flex-direction:column;padding:9px;border:1px solid var(--line);border-radius:16px;background:rgba(9,9,14,.97);backdrop-filter:blur(20px);box-shadow:0 24px 65px rgba(0,0,0,.5)}.mobile-menu.open{display:flex}.mobile-menu a{padding:12px 13px;border-radius:10px}.mobile-menu a:hover{background:rgba(255,255,255,.05)}.hero{min-height:710px;padding:70px 0 85px}.hero h1{font-size:clamp(39px,14vw,69px)}.hero-sub{font-size:13px}.hero-actions .btn{width:100%;max-width:320px}.hero-stats{margin-top:33px}.stat{min-width:130px;flex:1}.stat b{font-size:12px}.section-head{display:block}.section-desc{margin-top:12px}.grid{grid-template-columns:1fr}.category-grid{grid-template-columns:1fr}.controls{margin-bottom:10px}.filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.filter{flex:0 0 auto}.card-actions .btn{flex:1}.purchase-panel{padding:24px}.purchase-title{font-size:22px}footer{display:block}.cursor-glow{display:none}}
+
+/* Readability overrides */
+.hero-sub{font-size:18px}
+.section-title{font-size:38px}
+.section-desc{font-size:15px}
+.search{font-size:15px}
+.filter{font-size:12px}
+.mod-card h3{font-size:21px}
+.mod-card p{font-size:15px}
+.tag{font-size:10px}
+.card-actions .btn{font-size:10px}
+.category strong{font-size:14px}
+.category p{font-size:13px}
+.stat b{font-size:17px}
+.stat span{font-size:12px}
+.price{font-size:11px}
+.purchase-kicker{font-size:11px}
+.purchase-title{font-size:32px}
+.purchase-row{font-size:14px}
+.step strong{font-size:12px}
+.step p{font-size:14px}
+
 </style>
 </head>
 <body>
@@ -154,7 +176,7 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line);display:flex;justify
 const mods=[
   {name:"Donut Fake Pay",description:"A fake /pay interface made for DonutSMP-style gameplay.",category:"DonutSMP",icon:"💸",tags:["Fabric","DonutSMP"],price:"$10,000,000",sale:"50% OFF!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550940623974961302/payy-1.0.0.jar?ex=6ab02983&is=6aaed803&hm=7de30315b192c1f5c09a5d16b36841b8baca1f3de290806443b9b11db4b8b7ef&"},
   {name:"Donut Fake Scoreboard",description:"An editable fake scoreboard designed for DonutSMP-style gameplay.",category:"DonutSMP",icon:"📊",tags:["Fabric","DonutSMP"],price:"$10,000,000",sale:"50% OFF!",download:"https://cdn.discordapp.com/attachments/1378796004874260510/1550941036572835932/EditableScoreboard-1.0.0.jar?ex=6ab029e6&is=6aaed866&hm=bc984babfdeb9b01908f57cca01954ca596f1bb3647024603f11b59b33ceae2c&"},
-  {name:"Leather to Netherite Armor",description:"A resource pack that changes the appearance of leather armor to a netherite-style look.",category:"Resource Packs",icon:"🛡️",tags:["Resource Pack","Minecraft"],price:"Contact seller",download:""}
+  {name:"Leather to Netherite Armor",description:"A resource pack that changes the appearance of leather armor to a netherite-style look.",category:"Resource Packs",icon:"🛡️",tags:["Resource Pack","Minecraft"],price:"Free",download:""}
 ];
 const categories=[
   {name:"Featured",icon:"⭐",desc:"Highlighted projects"},
